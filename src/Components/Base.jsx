@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 function Base({ children }) {
 	return (
-		<div>
+		<div className="p-10">
 			<Navbar />
 			{children}
 			<Footer />
