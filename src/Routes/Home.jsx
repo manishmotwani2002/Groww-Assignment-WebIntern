@@ -20,23 +20,23 @@ function Home() {
 
 	return (
 		<Base>
-			<div className="flex justify-between items-center my-4 ml-6">
+			<div className="flex flex-col gap-4 md:flex-row justify-between items-center my-4 ">
 				<h1 className=" text-2xl font-bold text-gray-600">ALL BANKS</h1>
 
-				<div className="flex items-center ">
+				<div className="flex flex-col gap-4 md:flex-row items-center ">
 					<Filters />
 					<Search />
 				</div>
 			</div>
 
-			<div className="bg-white rounded-md overflow-hidden shadow-lg ml-6 max-max-h-screen">
+			<div className="bg-white rounded-md overflow-hidden shadow-lg max-max-h-screen">
 				<div className="flex flex-col">
 					<div className="grid grid-cols-6 place-items-center gap-8 bg-emerald-500 py-4 text-gray-50 p-3 font-bold text-light text-xl ">
 						{table_coloums.map((coloum, index) => {
 							return <div key={index}>{coloum.name}</div>;
 						})}
 					</div>
-					<div className=" h-2/3 overflow-y-auto">
+					<div className=" h-2/3 overflow-y-auto text-center">
 						{banks.banks.map((bank, index) => {
 							if (index >= startpost && index < startpost + limit)
 								return <BankCard bank={bank} page="home" />;
@@ -49,7 +49,7 @@ function Home() {
 				{banks.banks.length == 0 && (
 					<svg
 						role="status"
-						class="w-20 h-20 mr-2 mt-4 text-gray-200 animate-spin dark:text-gray-600 fill-green-500"
+						class="w-20 h-20 mr-2 mt-4 text-gray-200 animate-spin dark:text-gray-600 fill-yellow-500"
 						viewBox="0 0 100 101"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg">

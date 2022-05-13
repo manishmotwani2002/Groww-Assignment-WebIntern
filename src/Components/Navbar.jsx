@@ -10,9 +10,9 @@ function Navbar() {
 	};
 
 	return (
-		<div className="flex justify-between shadow-lg rounded-b-3xl py-4 px-4">
+		<div className="flex flex-col md:flex-row justify-between shadow-lg rounded-b-3xl py-4 px-4">
 			<div
-				className="flex flex-row items-center gap-4"
+				className="flex items-center gap-4"
 				onClick={() => {
 					navigate('/');
 				}}>
@@ -22,7 +22,7 @@ function Navbar() {
 				</div>
 			</div>
 
-			<div className="flex gap-8 text-2xl text-emerald-500 mr-12">
+			<div className="flex flex-col md:flex-row gap-8 text-2xl text-emerald-500 mr-12">
 				<button
 					onClick={() => {
 						navigate('/');

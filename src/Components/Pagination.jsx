@@ -10,12 +10,12 @@ function Pagination({ setStartpost, setLimit, startpost, limit, endLimit }) {
 	};
 
 	return (
-		<div className="mt-8 flex gap-6 justify-end">
+		<div className="py-4 flex gap-6 justify-end bg-emerald-500">
 			<nav aria-label="Page navigation">
 				<ul class="inline-flex ">
 					<li>
 						<button
-							class="h-10 px-5 text-green-600 font-semibold transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-indigo-100"
+							class="h-10 px-5 text-gray-50 font-semibold transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-indigo-100"
 							onClick={() => handlePrevious()}>
 							<svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
 								<path
@@ -27,13 +27,13 @@ function Pagination({ setStartpost, setLimit, startpost, limit, endLimit }) {
 					</li>
 
 					<li>
-						<button class="h-10 px-5 text-green-600 font-semibold transition-colors duration-150 focus:shadow-outline hover:bg-indigo-100">
-							Page {startpost}-{startpost + limit} of {endLimit}
+						<button class="h-10 px-5 text-gray-50 font-semibold transition-colors duration-150 focus:shadow-outline hover:bg-indigo-100 rounded-lg">
+							Entries {startpost}-{startpost + limit} of {endLimit}
 						</button>
 					</li>
 					<li>
 						<button
-							class="h-10 px-5 text-green-600 font-semibold transition-colors duration-150 rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+							class="h-10 px-5 text-gray-50 font-semibold transition-colors duration-150 rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
 							onClick={() => handleNext()}>
 							<svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
 								<path

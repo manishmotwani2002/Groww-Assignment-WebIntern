@@ -29,7 +29,7 @@ function Favourites() {
 								return <div key={index}>{coloum.name}</div>;
 							})}
 						</div>
-						<div className=" h-2/3 overflow-y-auto">
+						<div className=" h-2/3 overflow-y-auto text-center">
 							{favourites.map((bank, index) => {
 								return (
 									<div>
