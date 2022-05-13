@@ -13,7 +13,15 @@ function Home() {
 	const [limit, setLimit] = useState(10);
 
 	const { banks, getBanks } = useBankContext();
-	console.log('home banks log', banks);
+
+	// const banks = JSON.parse(localStorage.getItem('banks'));
+
+	console.log('banks in home', banks);
+
+	useEffect(() => {
+		getBanks();
+	}, []);
+
 	return (
 		<Base>
 			<div className="flex justify-between my-4 ml-6">

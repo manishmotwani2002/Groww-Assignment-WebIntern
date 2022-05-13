@@ -8,16 +8,15 @@ function Filter({ title = 'Select', values = [] }) {
 
 	const handleClick = (key) => {
 		console.log('clicked');
+
+		console.log('key', key);
+
 		if (title === 'Select City') {
 			getBanks(key);
 		} else {
 			getFilteredBanks(key);
 		}
 	};
-
-	useEffect(() => {
-		getBanks();
-	}, []);
 
 	return (
 		<Menu as="div" className="relative inline-block text-left">
@@ -56,7 +55,7 @@ function Filter({ title = 'Select', values = [] }) {
 										block px-4 py-2 text-sm
 									"
 											onClick={() => handleClick(item.value)}>
-											{item.value}
+											{item.label}
 										</a>
 									)}
 								</Menu.Item>
