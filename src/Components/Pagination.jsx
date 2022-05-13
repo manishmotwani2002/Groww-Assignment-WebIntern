@@ -9,24 +9,8 @@ function Pagination({ setStartpost, setLimit, startpost, limit, endLimit }) {
 		setStartpost(startpost + limit);
 	};
 
-	const handleLimit = (event) => {
-		console.log(event.target.value);
-		// setLimit(event.target.value);
-	};
-
 	return (
 		<div className="mt-8 flex gap-6 justify-end">
-			<div className="flex gap-4 items-center">
-				<h1 className="font-semibold text-green-600">Rows Per Page</h1>
-				<input
-					type="text"
-					placeholder="10"
-					width="10"
-					className="w-10 h-10 outline-none text-center border-2 border-green-400 rounded-lg focus:border-green-600"
-					onChange={(e) => handleLimit(e)}
-				/>
-			</div>
-
 			<nav aria-label="Page navigation">
 				<ul class="inline-flex ">
 					<li>

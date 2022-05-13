@@ -12,7 +12,6 @@ function Favourites() {
 
 	const getFavourites = () => {
 		const favourites = JSON.parse(localStorage.getItem('favourite'));
-		console.log('favourites', favourites);
 		setFavourites(favourites);
 	};
 
@@ -20,12 +19,12 @@ function Favourites() {
 		<Base>
 			<div>
 				<div className="flex justify-between my-4 ml-6">
-					<h1 className=" text-xl font-bold">FAVOURITES</h1>
+					<h1 className=" text-2xl font-bold">FAVOURITES</h1>
 				</div>
 
 				<div className="bg-white rounded-md overflow-hidden shadow-lg ml-6 max-max-h-screen">
 					<div className="flex flex-col">
-						<div className="grid grid-cols-6 gap-8 bg-emerald-500 py-4 text-gray-50 p-3 font-bold text-light text-lg ">
+						<div className="grid grid-cols-6 place-items-center gap-8 bg-emerald-500 py-4 text-gray-50 p-3 font-bold text-light text-xl ">
 							{table_coloums.map((coloum, index) => {
 								return <div key={index}>{coloum.name}</div>;
 							})}

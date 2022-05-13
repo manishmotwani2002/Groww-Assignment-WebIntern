@@ -6,13 +6,11 @@ function BankDetail() {
 
 	const preloadValues = () => {
 		const ifsc = window.location.pathname.split('/')[2];
-		console.log('ifsc param', ifsc);
 
 		//find details by ifsc code
 		const bankObject = JSON.parse(localStorage.getItem('banks'));
 
 		const bank = bankObject.find((bank) => bank.ifsc === ifsc);
-		console.log('filtered bank', bank);
 		setFilteredbank(bank);
 	};
 

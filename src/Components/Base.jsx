@@ -3,9 +3,9 @@ import Navbar from './Navbar';
 
 function Base({ children }) {
 	return (
-		<div className="p-10 text-gray-700">
+		<div className=" text-gray-700">
 			<Navbar />
-			{children}
+			<div className="mx-16 my-10">{children}</div>
 		</div>
 	);
 }

@@ -21,31 +21,32 @@ function BankCard({ bank, page, setFavourites }) {
 			if (localStorage.getItem('favourite')) {
 				let favouriteBanks = JSON.parse(localStorage.getItem('favourite'));
 				favouriteBanks.push(bank);
-				console.log(favouriteBanks);
 				localStorage.setItem('favourite', JSON.stringify(favouriteBanks));
 			} else {
 				let favouriteBanks = [];
 				favouriteBanks.push(bank);
-				console.log(favouriteBanks);
 
 				localStorage.setItem('favourite', JSON.stringify(favouriteBanks));
 			}
 			setHandleClick('');
 		} else {
 			//remove the element from local storage
+			let favouriteBanks = JSON.parse(localStorage.getItem('favourite'));
+			let index = favouriteBanks.indexOf(bank);
+			favouriteBanks.splice(index, 1);
+			localStorage.setItem('favourite', JSON.stringify(favouriteBanks));
+			setHandleClick('none');
 		}
 		navigate(`/`);
 	};
 
 	const performRedirect = () => {
-		console.log('Redirect');
-
 		navigate(`/bank-details/${bank.ifsc}`);
 	};
 
 	return (
 		// <button>
-		<div className="grid grid-cols-6 gap-8 px-3 py-5 border-b-2">
+		<div className="grid grid-cols-6 place-items-center gap-8 px-3 py-5 border-b-2">
 			<h1 onClick={() => performRedirect()}>{bank.bank_name}</h1>
 			<h1 onClick={() => performRedirect()}>{bank.ifsc}</h1>
 			<h1 onClick={() => performRedirect()}>{bank.branch}</h1>
