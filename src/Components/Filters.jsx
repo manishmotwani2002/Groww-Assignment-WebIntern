@@ -5,7 +5,7 @@ import { cities, filterOptions, PageLimits } from '../Constants/index';
 
 function Filters() {
 	return (
-		<div className="px-20">
+		<div className="px-20 flex gap-4">
 			<Filter title="Select City" values={cities} />
 			<Filter title="Select Category" values={filterOptions} />
 		</div>
