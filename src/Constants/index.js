@@ -22,8 +22,8 @@ export const table_coloums = [
 		key: 'address',
 	},
 	{
-		name: 'Favourites',
-		key: 'favourites',
+		name: 'Actions',
+		key: 'actions',
 	},
 ];
 
