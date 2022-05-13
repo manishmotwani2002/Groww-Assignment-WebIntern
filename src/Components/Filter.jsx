@@ -1,20 +1,20 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
 import { useBankContext } from '../Context/bankContext';
 
-function Filter({ title = 'Select', values = [] }) {
+function Filter({ title, values = [] }) {
 	const { getBanks, getFilteredBanks } = useBankContext();
 
-	const handleClick = (key) => {
-		console.log('clicked');
+	const [header, setHeader] = useState(title);
 
-		console.log('key', key);
+	const handleClick = (item) => {
+		setHeader(item.label);
 
 		if (title === 'Select City') {
-			getBanks(key);
+			getBanks(item.value);
 		} else {
-			getFilteredBanks(key);
+			getFilteredBanks(item.value);
 		}
 	};
 
@@ -22,7 +22,7 @@ function Filter({ title = 'Select', values = [] }) {
 		<Menu as="div" className="relative inline-block text-left">
 			<div>
 				<Menu.Button className="inline-flex gap-2 justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-300">
-					{title}
+					{header}
 					<svg
 						height="20"
 						width="20"
@@ -54,7 +54,7 @@ function Filter({ title = 'Select', values = [] }) {
 										hover:bg-gray-200
 										block px-4 py-2 text-sm
 									"
-											onClick={() => handleClick(item.value)}>
+											onClick={() => handleClick(item)}>
 											{item.label}
 										</a>
 									)}

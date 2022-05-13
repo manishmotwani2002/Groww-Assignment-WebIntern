@@ -13,7 +13,7 @@ export const bankContext = createContext({
 const BANK = {
 	banks: [],
 	filteredData: null,
-	filters: { city: 'MUMBAI', filter: null, filerValue: '' },
+	filters: { city: 'MUMBAI', filter: 'Select Category', filerValue: '' },
 	favourites: null,
 };
 
