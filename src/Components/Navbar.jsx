@@ -4,8 +4,8 @@ import Logo from '../Assets/growwLogo.png';
 function Navbar() {
 	return (
 		<div className="flex justify-between">
-			<div className="flex flex-row">
-				<img src={Logo} alt="Logo" className="w-20 h-20" />
+			<div className="flex flex-row items-center gap-4">
+				<img src={Logo} alt="Logo" className="w-16 h-16" />
 				<div className="uppercase  text-3xl  font-bold text-green-500">
 					find your bank
 				</div>

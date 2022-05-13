@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useEffect, useContext, useState } from 'react';
+import axios from 'axios';
 
 import { API } from '../Constants';
 
@@ -9,23 +10,32 @@ export const bankContext = createContext({
 });
 
 const BANK = {
-	data: null,
+	banks: [],
 	filteredData: null,
-	filters: { city: 'MUMBAI', filter: null, query: '' },
+	filters: { city: 'MUMBAI', filter: null, filerValue: '' },
 	favourites: null,
 };
 
 export function BankContextProvider({ children }) {
-	const [banks, setBank] = useState(BANK);
+	// console.log('test');
 
-	function getBanks(values) {
+	const [banks, setBanks] = useState(BANK);
+
+	async function getBanks(city = 'MUMBAI') {
 		//perform the API call
 
-		setBank({ data: values });
+		await axios
+			.get(`${API}` + `${city}`)
+			.then((response) => {
+				console.log('response', response.data);
+				setBanks({ ...banks, banks: response.data });
+			})
+			.catch((err) => console.log('err', err));
 	}
+
 	function getFilteredBanks(filters) {
 		//filtering the data here
-		setBank({
+		setBanks({
 			filteredData: banks.data.filter((bank) => {
 				return bank.city.toUpperCase().includes(filters.city.toUpperCase());
 			}),

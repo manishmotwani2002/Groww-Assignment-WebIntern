@@ -14,7 +14,7 @@ export const table_coloums = [
 		key: 'branch',
 	},
 	{
-		name: 'Bank ID',
+		name: 'City',
 		key: 'bank_id',
 	},
 	{
@@ -48,4 +48,16 @@ export const cities = [
 		label: 'Chennai',
 		value: 'CHENNAI',
 	},
+];
+
+export const filterOptions = [
+	{ label: 'IFSC', value: 'ifsc' },
+	{ label: 'Bank Name', value: 'bank_name' },
+	{ label: 'Branch', value: 'branch' },
+];
+
+export const PageLimits = [
+	{ label: '5', value: 5 },
+	{ label: '10', value: 10 },
+	{ label: '20', value: 20 },
 ];
